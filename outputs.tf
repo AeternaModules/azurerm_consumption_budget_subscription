@@ -1,3 +1,7 @@
+output "consumption_budget_subscriptions_id" {
+  description = "Map of id values across all consumption_budget_subscriptions, keyed the same as var.consumption_budget_subscriptions"
+  value       = { for k, v in azurerm_consumption_budget_subscription.consumption_budget_subscriptions : k => v.id }
+}
 output "consumption_budget_subscriptions_amount" {
   description = "Map of amount values across all consumption_budget_subscriptions, keyed the same as var.consumption_budget_subscriptions"
   value       = { for k, v in azurerm_consumption_budget_subscription.consumption_budget_subscriptions : k => v.amount }
